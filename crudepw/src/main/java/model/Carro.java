@@ -2,14 +2,18 @@ package model;
 
 public class Carro {
 	private String modelo, cor, fabricante;
-	private int ano;
+	private int codigo, ano;
 	
-	public Carro(String modelo, String cor, String fabricante, int ano) {
-		super();
+	public Carro(int codigo, String modelo, String cor, String fabricante, int ano) {
+		this.codigo = codigo;
 		this.modelo = modelo;
 		this.cor = cor;
 		this.fabricante = fabricante;
 		this.ano = ano;
+	}
+	
+	public Carro() {
+		
 	}
 
 	public String getModelo() {
@@ -42,5 +46,13 @@ public class Carro {
 
 	public void setAno(int ano) {
 		this.ano = ano;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 }
