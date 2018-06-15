@@ -26,7 +26,7 @@ public class ConexaoBanco {
 	
 	private static Connection conectarBanco() throws SQLException {
 		
-	    return DriverManager.getConnection("jdbc:sqlite://home/denis/MySQLiteDB");
+	    return DriverManager.getConnection("jdbc:sqlite:/Users/denismasunaga/Faculdade/PW/crudepw/MySQLiteDB");
 	}
 	
 }
