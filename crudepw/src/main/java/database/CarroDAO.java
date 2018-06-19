@@ -83,4 +83,23 @@ public class CarroDAO {
 		}
 		return listaDeCarros;
 	}
+	
+	public Carro find(int id) throws SQLException {
+		ConexaoBanco cb = new ConexaoBanco();
+
+		String sql = "select * from carros where codigo = ?";
+		PreparedStatement pstmt = cb.obterConexao().prepareStatement(sql);
+		pstmt.setInt(1, id);
+		ResultSet rs = pstmt.executeQuery();
+		Carro carro = new Carro();
+		
+		if (rs.first()) {
+			carro.setCodigo(rs.getInt("codigo"));
+			carro.setModelo(rs.getString("modelo"));
+			carro.setCor(rs.getString("cor"));
+			carro.setFabricante(rs.getString("fabricante"));
+			carro.setAno(rs.getInt("ano"));
+		}
+		return carro;
+	}
 }

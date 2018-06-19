@@ -12,8 +12,6 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <ol class="breadcrumb">
-          <li><a href="/">Menu</a></li>
-          <li class="active">Venda</li>
         </ol>
         <div class="panel panel-default">
           <div class="panel-body">
@@ -21,7 +19,6 @@
               <div class="form-group">
                 <input
                   name="codigo"
-                  <%-- value="${param.codigo}" --%>
                   type="number"
                   placeholder="Codigo"
                   class="form-control">
@@ -29,7 +26,6 @@
               <div class="form-group">
                 <input
                   name="modelo"
-                  <%-- value="${param.modelo}" --%>
                   type="text"
                   placeholder="Modelo"
                   class="form-control">
@@ -37,7 +33,6 @@
               <div class="form-group">
                 <input
                   name="cor"
-                  <%-- value="${param.cor}" --%>
                   type="text"
                   placeholder="Cor"
                   class="form-control">
@@ -45,7 +40,6 @@
               <div class="form-group">
                 <input
                   name="fabricante"
-                  <%-- value="${param.fabricante}" --%>
                   type="text"
                   placeholder="Fabricante"
                   class="form-control">
@@ -53,7 +47,6 @@
               <div class="form-group">
                 <input
                   name="ano"
-                  <%-- value="${param.ano}" --%>
                   type="number"
                   placeholder="Ano"
                   class="form-control">
@@ -66,10 +59,12 @@
         </div>
         <table class="table table-bordered table-striped">
           <tr>
-            <td>Codigo</td>
-            <td>Produto</td>
-            <td>Quantidade</td>
-            <td>#</td>
+            <td>Deletar</td>
+            <td>Modelo</td>
+            <td>Cor</td>
+            <td>Fabricante</td>
+            <td>Ano</td>
+            
           </tr>
           <%
           List<Carro> carros = (List<Carro>) request.getAttribute("carros");
@@ -77,11 +72,11 @@
 	          for (Carro c:carros) {
 	          %>
 	            <tr>
-	              <td><a href="venda?codigo=<%=c.getCodigo()%>&modelo=<%=c.getModelo()%>
-	              &cor=<%=c.getCor()%>&fabricante=<%=c.getFabricante()%>&ano=<%=c.getAno()%>"><%=c.getCodigo()%></a></td>
+	              <td><a href="carro-delete?id=<%=c.getCodigo()%>"><%=c.getCodigo()%></a></td>
 	              <td><%=c.getModelo()%></td>
+	              <td><%=c.getCor()%></td>
 	              <td><%=c.getFabricante()%></td>
-	
+	              <td><%=c.getAno()%></td>
 	            </tr>
 	          <%
           	}
